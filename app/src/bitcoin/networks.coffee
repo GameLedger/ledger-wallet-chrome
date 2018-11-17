@@ -14,6 +14,14 @@ bitcoin.networks.btcgpu =
   pubKeyHash: 38
   scriptHash: 23
 
+bitcoin.networks.gamecredits =
+  magicPrefix: '\x19Gamecredits Signed Message:\n',
+  bip32:
+    public: 0x019da462,
+    private: 0x05358394
+  pubKeyHash: 38
+  scriptHash: 62
+
 bitcoin.networks.zcash =
   magicPrefix: '\x16Zcash Signed Message:\n'
   bip32:
@@ -904,3 +912,47 @@ ledger.bitcoin.Networks =
     dust: 10000
     handleFeePerByte: no
     areTransactionTimestamped: no
+
+  gamecredits:
+    name: 'gamecredits'
+    display_name: 'gamecredits'
+    chain: 'Gamecredits'
+    plural: 'gamecredits'
+    scheme: 'gamecredits:'
+    bolosAppName: 'Gamecredits'
+    ticker: 'game'
+    tickerKey:
+      from: 'fromGAME'
+      to: 'toGAME'
+    bip44_coin_type: '101'
+    handleSegwit: no
+    isSegwitSupported: yes
+    version:
+      regular: 38
+      P2SH: 62
+      XPUB: 0x0488B21E
+    bitcoinjs: bitcoin.networks.gamecredits
+    dust: 10000
+    handleFeePerByte: no
+
+  gamecredits_segwit:
+    name: 'gamecredits_segwit'
+    display_name: 'gamecredits'
+    chain: 'Segwit'
+    plural: 'gamecredits'
+    scheme: 'gamecredits:'
+    bolosAppName: 'GameCredits'
+    ticker: 'game'
+    tickerKey:
+      from: 'fromGAME'
+      to: 'toGAME'
+    bip44_coin_type: '101'
+    handleSegwit: yes
+    isSegwitSupported: yes
+    version:
+      regular: 38
+      P2SH: 62
+      XPUB: 0x0488B21E
+    bitcoinjs: bitcoin.networks.gamecredits
+    dust: 10000
+    handleFeePerByte: no
